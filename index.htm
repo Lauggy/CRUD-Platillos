@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Platillos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="firebaseauth.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!--**************Lado izquierdo, listado de platillos registrados en la DB**************-->
+        <div class="left-column">
+        </div>
+
+        <!--**************Lado derecho formulario para el registro de un nuevo platillo**************-->
+        <div class="right-column">
+            <h2>Registrar Nuevo Platillo</h2>
+            <form id="registrar-platillo">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Platillo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" step="0.01" min="0" placeholder="$" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" rows="4"  placeholder="opcional"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="" disabled selected>Elige una categoría</option>
+                        <option value="Hamburguesa">Hamburguesa</option>
+                        <option value="Hot Dogs">Hot Dogs</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Bebidas">Bebidas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ingredientes">Ingredientes:</label>
+                    <input type="text" id="ingredientes" name="ingredientes" required>
+                </div>
+                <div class="form-group">
+                    <button class= "button-agregar" type="submit">AGREGAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
